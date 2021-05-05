@@ -5,4 +5,4 @@
     name: apache_exporter
     state: "{{ apache_exporter_service_state }}"
     enabled: "{{ apache_exporter_service_enabled }}"
-    daemon_reload: yes
+    daemon_reload: true

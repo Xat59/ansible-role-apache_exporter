@@ -3,10 +3,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
+## [Unreleased](https://github.com/Xat59/ansible-role-apache_exporter/tree/develop)
 
-## [Unreleased](https://github.com/idealista/apache_exporter-role/tree/develop)
+## [2.0.0](https://github.com/Xat59/ansible-role-apache_exporter/tree/2.0.0)
 
-## [1.0.0](https://github.com/idealista/apache_exporter-role/tree/1.0.0)
+#### Added
+
+- support for RHEL & CentOS systems.
+- use the apache_exporter version `v0.8.0`.
+
+## [1.0.0](https://github.com/Xat59/ansible-role-apache_exporter/tree/1.0.0)
+
 ### Added
-- *Download and configure apache exporter* @jdvega
-- *First release* @jdvega
+
+- Download and configure apache exporter @jdvega
+- First release @jdvega
