@@ -18,6 +18,7 @@ addons:
 install:
   # Install test dependencies.
   - pip install molecule yamllint ansible-lint docker ansible
+  - pip install 'molecule[docker]'
 
 before_script:
   # Use actual Ansible Galaxy role name for the project directory.
@@ -27,6 +28,8 @@ before_script:
 
 script:
   # Run tests.
+  - molecule --version
+  - ansible --version
   - molecule test
 
 notifications:
