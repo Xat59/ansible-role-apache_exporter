@@ -1,0 +1,15 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: get service facts
+      service_facts:
+
+    - name: Service is enabled and running
+      assert:
+        that: 
+          - ansible_facts.services["apache_exporter.service"].status == "enabled"
+          - ansible_facts.services["apache_exporter.service"].state == "running"
