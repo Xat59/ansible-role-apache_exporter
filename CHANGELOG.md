@@ -10,7 +10,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 #### Added
 
 - support for RHEL & CentOS systems.
-- use the apache_exporter version `v0.8.0`.
+- use the apache_exporter version `v0.7.0`.
 
 ## [1.0.0](https://github.com/Xat59/ansible-role-apache_exporter/tree/1.0.0)
 

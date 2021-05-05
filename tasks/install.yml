@@ -28,14 +28,14 @@
     mode: 0755
     owner: "{{ apache_exporter_user }}"
     group: "{{ apache_exporter_group }}"
-  when: apache_exporter_is_installed == false or apache_exporter_is_different_version == true
+  when: not apache_exporter_is_installed or apache_exporter_is_different_version
 
 - name: APACHE_EXPORTER | Link binary
   file:
     src: "{{ apache_exporter_install_path }}/apache_exporter"
     dest: "/usr/bin/apache_exporter"
     state: link
-  when: apache_exporter_is_installed == false or apache_exporter_is_different_version == true
+  when: not apache_exporter_is_installed or apache_exporter_is_different_version
 
 - name: APACHE_EXPORTER | Copy Daemon script
   template:
