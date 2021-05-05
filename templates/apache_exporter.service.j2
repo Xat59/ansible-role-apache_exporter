@@ -9,9 +9,9 @@ Group={{ apache_exporter_group }}
 RuntimeDirectory=apache_exporter
 
 {% if apache_exporter_option_insecure %}
-ExecStart=/bin/sh -c '{{ apache_exporter_install_path }}/apache_exporter --insecure --scrape_uri="{{ apache_exporter_option_scrape_uri }}" --host_override="{{ apache_exporter_option_host }}" --telemetry.address="{{ apache_exporter_option_telemetry_address }}" --telemetry.endpoint="{{ apache_exporter_option_telemetry_endpoint }}" --log.level="{{ apache_exporter_option_log_level }}" >> {{ apache_exporter_log_file }} 2>> {{ apache_exporter_error_log_file }}'
+ExecStart=/bin/sh -c '{{ apache_exporter_install_path }}/apache_exporter --insecure --scrape_uri="{{ apache_exporter_option_scrape_uri }}" --telemetry.address="{{ apache_exporter_option_telemetry_address }}" --telemetry.endpoint="{{ apache_exporter_option_telemetry_endpoint }}" --log.level="{{ apache_exporter_option_log_level }}" >> {{ apache_exporter_log_file }} 2>> {{ apache_exporter_error_log_file }}'
 {%  else %}
-ExecStart=/bin/sh -c '{{ apache_exporter_install_path }}/apache_exporter --scrape_uri="{{ apache_exporter_option_scrape_uri }}" --host_override="{{ apache_exporter_option_host }}" --telemetry.address="{{ apache_exporter_option_telemetry_address }}" --telemetry.endpoint="{{ apache_exporter_option_telemetry_endpoint }}" --log.level="{{ apache_exporter_option_log_level }}" >> {{ apache_exporter_log_file }} 2>> {{ apache_exporter_error_log_file }}'
+ExecStart=/bin/sh -c '{{ apache_exporter_install_path }}/apache_exporter --scrape_uri="{{ apache_exporter_option_scrape_uri }}" --telemetry.address="{{ apache_exporter_option_telemetry_address }}" --telemetry.endpoint="{{ apache_exporter_option_telemetry_endpoint }}" --log.level="{{ apache_exporter_option_log_level }}" >> {{ apache_exporter_log_file }} 2>> {{ apache_exporter_error_log_file }}'
 {% endif %}
 
 ExecStartPost=/bin/sh -c "echo $MAINPID > /run/apache_exporter/apache_exporter.pid"
