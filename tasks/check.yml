@@ -14,19 +14,7 @@
     set -e pipefail && \
     apache_exporter --version | grep "apache_exporter, version" | cut -d" " -f3
   register: apache_exporter_current_installed_version
-  when:
-    - apache_exporter_is_installed_command
-    - apache_exporter_version is version('0.8.0', '>=')
-  changed_when: false
-
-- name: APACHE_EXPORTER | Apache exporter installed version
-  shell: >
-    set -e pipefail && \
-    apache_exporter -version | grep "apache_exporter, version" | cut -d" " -f3
-  register: apache_exporter_current_installed_version
-  when:
-    - apache_exporter_is_installed_command
-    - apache_exporter_version is version('0.8.0', '<')
+  when: apache_exporter_is_installed_command
   changed_when: false
 
 - name: APACHE_EXPORTER | Set installed fact
