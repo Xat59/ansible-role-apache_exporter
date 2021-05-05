@@ -1,4 +1,8 @@
 ---
+- name: APACHE_EXPORTER | Check for expected Apache exporter version
+  fail:
+    msg: "Cannot install apache_exporter >= v0.8.0 because of this : https://github.com/Lusitaniae/apache_exporter/issues/94"
+  when: apache_exporter_version is version('0.8.0', '>=')
 
 - name: APACHE_EXPORTER | Check if Apache exporter already installed
   shell: '[ -x "$(command -v apache_exporter)" ] && echo "True" || echo "False"'
@@ -6,7 +10,9 @@
   changed_when: false
 
 - name: APACHE_EXPORTER | Apache exporter installed version
-  shell: 'apache_exporter -version | grep "apache_exporter, version" | cut -d" " -f3'
+  shell: >
+    set -e pipefail && \
+    apache_exporter --version | grep "apache_exporter, version" | cut -d" " -f3
   register: apache_exporter_current_installed_version
   when: apache_exporter_is_installed_command
   changed_when: false

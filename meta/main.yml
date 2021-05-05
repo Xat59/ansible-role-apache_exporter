@@ -1,15 +1,26 @@
 ---
-
 galaxy_info:
-  company: Idealista S.A.
-  description: Prometheus Apache exporter
-  min_ansible_version: 2.3
+  role_name: apache_exporter
+  author: xat59
+  company: Scalair
+  description: Install and configure apache_exporter from https://github.com/Lusitaniae/apache_exporter
   license: Apache 2.0
+  min_ansible_version: "2.10"
   platforms:
+    - name: EL
+      version:
+        - 7
+        - 8
     - name: Debian
       versions:
-        - stretch
-  categories:
+        - jessie
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
+  galaxy_tags:
     - monitoring
     - prometheus
     - apache
+dependencies: []
