@@ -4,4 +4,4 @@
   tasks:
     - name: "Include ansible-role-apache_exporter"
       include_role:
-        name: "ansible-role-apache_exporter"
+        name: xat59.apache_exporter
