@@ -5,6 +5,12 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/Xat59/ansible-role-apache_exporter/tree/develop)
 
+## [2.1.0](https://github.com/Xat59/ansible-role-apache_exporter/tree/2.1.0)
+
+#### Changed
+
+- use the apache_exporter version `v0.9.0` by default.
+
 ## [2.0.0](https://github.com/Xat59/ansible-role-apache_exporter/tree/2.0.0)
 
 #### Added
